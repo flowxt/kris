@@ -187,67 +187,73 @@
   /* Media Queries */
 
   @media screen and (max-width: 730px) {
-    nav {
-      font-size: 0.6rem;
-    }
-    
     .logo {
-      width: 100px;
-      height: 100px;
-      margin-left: 10px;
+      width: 40px;
+      height: 40px;
     }
-    
-    .container {
-      flex-direction: column;
-    }
-    
-    h1 {
-      font-size: 1.5rem;
-      margin: 10px 0;
-    }
-    
-    .btn-reservation {
-      width: 100px;
-      height: 35px;
-      font-size: 0.8rem;
-      margin: 10px 0;
-    }
-    
-    header {
-      height: 90vh;
-    }
-  }
   
-  @media screen and (max-width: 480px) {
-    .titre {
-      flex-direction: column;
-      align-items: center;
-    }
-    
     h1 {
-      font-size: 1.2rem;
-      margin-left: 0;
-      text-align: center;
-    }
-    
-    .btn-reservation {
-      width: 90px;
-      height: 30px;
       font-size: 0.7rem;
     }
-    
-    .switch {
-      width: 40px;
-      height: 20px;
-    }
-    
-    .slider:before {
-      height: 15px;
-      width: 15px;
-    }
-  }
   
-  main {
-    height: auto;
-    padding: 20px;
+    .btn-reservation {
+      display: none; /* Ajout d'une marge à gauche pour un espacement avec l'interrupteur */
+      
+    }
+  
+    /* Style de l'interrupteur en mode mobile */
+    .titre {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Assure un bon espacement entre le logo, le titre, et le bouton */
+    }
+  
+    .switch {
+      width: 30px;  /* Taille réduite de l'interrupteur */
+      height: 30px; /* Garder le cercle pour l'interrupteur */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+    }
+  
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+  
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 50%;  /* Rendre l'interrupteur circulaire */
+      width: 30px;  /* Ajuster la largeur pour être un cercle parfait */
+      height: 30px; /* Ajuster la hauteur pour être un cercle parfait */
+    }
+  
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 22px;  /* Taille du cercle intérieur */
+      width: 22px;   /* Taille du cercle intérieur */
+      left: 4px;     /* Centrer à l'intérieur du cercle */
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+  
+    input:checked + .slider {
+      background-color: black;
+    }
+  
+    input:checked + .slider:before {
+      transform: translateX(8px); /* Réduire le déplacement du cercle à l'intérieur */
+    }
   }
