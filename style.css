@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  a{
+    text-decoration: none;
+    
+  }
+  
+  header {
+    height: 110vh;
+    background: url(./medias/white-angel.jpg) no-repeat center center/cover;
+    transition: background-image 0.4s ease;
+  }
+  
+  header.dark-mode {
+    background: url(./medias/black-angel.jpg) no-repeat center center/cover;
+  }
+  
+  .logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: 20px;
+  }
+  
+  .titre {
+    display: flex;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-left: 20px;
+    font-family: 'montserrat', sans-serif;
+    font-weight: 200;
+    transition: color 0.4s ease;
+  }
+  
+  header.dark-mode h1 {
+    color: white;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .btn-reservation {
+    width: 120px;
+    height: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
+    background: rgb(173, 169, 169);
+    border: 1px solid rgb(173, 169, 169);
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  
+  .btn-reservation:hover {
+    background: black;
+    color: white;
+  }
+  
+  header.dark-mode .btn-reservation {
+    color: black;
+    background: rgb(200, 200, 200);
+  }
+  
+  /* Style de l'interrupteur */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    margin-left: 10px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: black;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(24px);
+  }
+
+
+  /* La navbar  */
+  nav {
+    background-color: #fff;
+    padding: 0 20px;
+    border-radius: 40px;
+    box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
+    display: flex;
+    overflow: hidden;
+    overflow-x: auto;
+    position: relative;
+    justify-content: space-around;
+  }
+  
+  /* On stylise chaque élément */
+  .nav-item {
+    color: #83818c;
+    font-family: arial, sans-serif;
+    padding: 20px;
+    margin: 0 6px;
+    position: relative;
+  }
+  
+  /* Ici on met juste un petit élément avant chaque élément pour le rendre plus beau visuellement */
+  .nav-item:before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    background-color: #dfe2ea;
+    height: 5px;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    left: 0;
+    transition: .3s;
+  }
+  
+  /* Avec les dernières nouveautés de CSS, on peut changer les propriétés des éléments selon des conditions avec not */
+  .nav-item:not(.is-active):hover:before {
+    bottom: 0;
+  }
+  .nav-item:not(.is-active):hover {
+    color: #333;
+  }
+  
+  /* Stylisons notre indicateur */
+  .nav-indicator {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    transition: .4s;
+    border-radius: 8px 8px 0 0;
+  }
+
+  @media screen and (max-width: 730px) {
+    nav{font-size : 0.6rem;
+    }
+  } 
+
+  main{
+    height: 100vh;
+  }
