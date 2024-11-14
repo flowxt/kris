@@ -178,22 +178,65 @@
     }
   } 
 
-  main{
-    height: 100vh;
+main{
+  background: white;
+}
+
+  h2{
+    margin: 30px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 300;
   }
+.container2 {
+  display: flex;
+  
+}
+.imageKris{
+  width: 90%;
+  object-fit: cover;
+  margin: 30px;
+ 
+}
 
+.presentation{
+  width: 90%;
+  margin-top: 30px;
+}
+.savoir{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 120px;
+    height: 40px;
+    background: rgb(173, 169, 169);
+    border: 1px solid rgb(173, 169, 169);
+}
+.savoir:hover{
+  background: black;
+  color: white;
+}
 
+.presentation-paragraphe{
+  font-family: 'montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-right: 30px;
+  margin-top: 50px;
+}
+.moi{
+  margin-right: 35px;
+}
 
   /* Media Queries */
 
   @media screen and (max-width: 730px) {
     .logo {
-      width: 40px;
-      height: 40px;
+      width: 60px;
+      height: 60px;
     }
   
     h1 {
-      font-size: 0.7rem;
+      font-size: 0.85rem;
     }
   
     .btn-reservation {
@@ -255,5 +298,11 @@
   
     input:checked + .slider:before {
       transform: translateX(8px); /* Réduire le déplacement du cercle à l'intérieur */
+    }
+
+    .container2 {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
     }
   }
